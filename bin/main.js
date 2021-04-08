@@ -46,8 +46,9 @@ program
   .action(() => {
     updateCheck();
   });
+
+// 处理非法命令
 program.arguments('<command>').action((cmd) => {
-  // 不退出输出帮助信息
   program.outputHelp();
   console.log(`  ` + chalk.red(`Unknown command ${chalk.yellow(cmd)}.`));
   console.log();
